@@ -1,6 +1,6 @@
 # What is a WebAssembly Component (And Why)?
 
-[![What is a WebAssembly Component (And Why)](https://img.youtube.com/vi/tAACYA1Mwv4/0.jpg)](https://www.youtube.com/watch?v=ojrkwKS17N8fNryB)
+[![What is a WebAssembly Component (And Why)](https://img.youtube.com/vi/tAACYA1Mwv4/0.jpg)](https://www.youtube.com/watch?v=tAACYA1Mwv4)
 
 Starting with the basics, [what is WebAssembly](https://webassembly.org/):
 
