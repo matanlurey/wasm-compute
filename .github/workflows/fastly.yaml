@@ -12,8 +12,8 @@ on:
 
 jobs:
   # Check formatting, lints.
-  format:
-    name: check formatting & lints
+  checks:
+    name: checks & lints
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,3 +23,16 @@ jobs:
           targets: wasm32-wasi
       - run: cargo fmt -- --check
       - run: cargo clippy --all-targets --all-features -- -W clippy::pedantic
+
+  # Build and test
+  build:
+    name: build & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+          targets: wasm32-wasi
+      - run: cargo install viceroy
+      - run: cargo test --all-targets --all-features
