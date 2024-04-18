@@ -1,0 +1,14 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = ["matan@lurey.dev"]
+description = "A simple example of a Fastly Compute@Edge package"
+language = "rust"
+manifest_version = 3
+name = "hello-fastly"
+
+# If you are cloning this repository, you should change this to your own.
+service_id = "jIGACRbvMgpudVQHpD9Ol3"
+
+[scripts]
+build = "cargo build --release --target wasm32-wasi --color always"

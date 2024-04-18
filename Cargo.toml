@@ -1,4 +1,6 @@
 [workspace]
-
 resolver = "2"
-members = ["crates/hello-fastly"]
+members = ["examples/hello-fastly"]
+
+[workspace.lints.clippy]
+pedantic = "deny"

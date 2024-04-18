@@ -1,0 +1,25 @@
+# Fetches toolchains, runs analysis, tests, and deploys to Fastly.
+name: CI
+
+# Run on both pre-submit (pull request) and post-submit (push) events.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # Check formatting, lints.
+  format:
+    name: check formatting & lints
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+          targets: wasm32-wasi
+      - run: cargo fmt -- --check
+      - run: cargo clippy --all-targets --all-features -- -W clippy::pedantic

@@ -4,3 +4,7 @@ Brewfile.lock.json
 
 # Rust compilation output
 target/
+examples/*/bin/
+
+# Fastly compilation output
+examples/*/pkg/
