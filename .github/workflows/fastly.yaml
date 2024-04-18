@@ -31,8 +31,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
+        id: rust-toolchain
         with:
           components: rustfmt, clippy
           targets: wasm32-wasi
+      - name: Cache cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            cli/tests/trap-test/target/
+            test-fixtures/target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}-rust-${{ steps.rust-toolchain.outputs.cachekey }}
+      # Takes ~4m of the otherwise <5m worker time if not cached.
       - run: cargo install viceroy
       - run: cargo test --all-targets --all-features
