@@ -12,3 +12,6 @@ brew 'rustup'
 # https://fastly.dev/reference/cli/
 tap 'fastly/tap'
 brew 'fastly'
+
+# Install nextest (alternative to "cargo test" that Fastly also requires)
+brew 'cargo-nextest'

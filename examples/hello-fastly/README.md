@@ -9,6 +9,12 @@ This is a simple example of a Fastly service written in Rust using the
 fastly compute serve
 ```
 
+## Test
+
+```shell
+cargo nextest run
+```
+
 ## Publish
 
 ```shell

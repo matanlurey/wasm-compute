@@ -24,6 +24,7 @@ Install [homebrew](https://brew.sh/), and then run:
 brew bundle install
 rustup-init
 rustup target add wasm32-wasi
+cargo install viceroy
 ```
 
 If this is your first time using Fastly, you will need to [create an account](https://www.fastly.com/signup/).
