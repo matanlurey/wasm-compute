@@ -76,3 +76,10 @@ There were some friction points I encountered while setting up this repository.
 
 - When I tried creating a _global_ token, I got an error: _You must POST /sudo
   to access this endpoint_. Eventually it worked several minutes later.
+
+- I enabled 2-factor authentication, but I noticed when I need sudo-level
+  permissions (like creating a token), the second prompt (for the sudo-level)
+  doesn't work if the 2FA code is still the same one that was used for the first
+  prompt (I have to wait for a new code to be generated).
+
+- Custom workflows don't support project directories (<https://github.com/fastly/compute-actions/issues/49>)

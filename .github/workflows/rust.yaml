@@ -1,5 +1,5 @@
 # Fetches toolchains, runs analysis, tests, and deploys to Fastly.
-name: CI
+name: ci
 
 # Run on both pre-submit (pull request) and post-submit (push) events.
 on:
@@ -47,5 +47,6 @@ jobs:
             test-fixtures/target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}-rust-${{ steps.rust-toolchain.outputs.cachekey }}
       # Takes ~4m of the otherwise <5m worker time if not cached.
-      - run: cargo install viceroy
+      # Install viceroy if not already installed.
+      - run: which viceroy || cargo install viceroy
       - run: cargo test --all-targets --all-features
