@@ -1,4 +1,4 @@
-name: Preview on Fastly
+name: preview
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}-${{ github.workflow}}
