@@ -81,3 +81,5 @@ There were some friction points I encountered while setting up this repository.
   permissions (like creating a token), the second prompt (for the sudo-level)
   doesn't work if the 2FA code is still the same one that was used for the first
   prompt (I have to wait for a new code to be generated).
+
+- Custom workflows don't support project directories (<https://github.com/fastly/compute-actions/issues/49>)
