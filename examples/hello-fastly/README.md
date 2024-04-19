@@ -17,6 +17,8 @@ cargo nextest run
 
 ## Publish
 
+<https://luckily-eternal-hound.edgecompute.app>
+
 ```shell
 fastly compute publish
 ```
