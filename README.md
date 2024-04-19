@@ -7,7 +7,6 @@ To learn more about and experince [Fastly][], particularly their
 [wasm-compute]: https://www.fastly.com/products/compute
 
 [![ci](https://github.com/matanlurey/wasm-compute/actions/workflows/rust.yaml/badge.svg)](https://github.com/matanlurey/wasm-compute/actions/workflows/rust.yaml)
-
 [![deploy](https://github.com/matanlurey/wasm-compute/actions/workflows/deploy.yaml/badge.svg)](https://github.com/matanlurey/wasm-compute/actions/workflows/deploy.yaml)
 
 <!--
