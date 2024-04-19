@@ -6,6 +6,10 @@ To learn more about and experince [Fastly][], particularly their
 [fastly]: https://www.fastly.com/
 [wasm-compute]: https://www.fastly.com/products/compute
 
+[![ci](https://github.com/matanlurey/wasm-compute/actions/workflows/rust.yaml/badge.svg)](https://github.com/matanlurey/wasm-compute/actions/workflows/rust.yaml)
+
+[![deploy](https://github.com/matanlurey/wasm-compute/actions/workflows/deploy.yaml/badge.svg)](https://github.com/matanlurey/wasm-compute/actions/workflows/deploy.yaml)
+
 <!--
 Emoji reference area.
 
@@ -70,9 +74,11 @@ There were some friction points I encountered while setting up this repository.
 
 - When using `fastly profile create`, and I'm asked for an API key, the prompt
   says _Fastly API token:_, but the input is hidden, so it was hard to know if
-  I was copy-pasting the correct value or not (<https://github.com/fastly/cli/issues/1184>).
+  I was copy-pasting the correct value or not
+  (<https://github.com/fastly/cli/issues/1184>).
 
-- I eventually created one, but it was _wrong_ beacuse I created a "Read only token" (<https://github.com/fastly/cli/issues/1185>).
+- I eventually created one, but it was _wrong_ beacuse I created a
+  "Read only token" (<https://github.com/fastly/cli/issues/1185>).
 
 - When I tried creating a _global_ token, I got an error: _You must POST /sudo
   to access this endpoint_. Eventually it worked several minutes later.
@@ -82,4 +88,8 @@ There were some friction points I encountered while setting up this repository.
   doesn't work if the 2FA code is still the same one that was used for the first
   prompt (I have to wait for a new code to be generated).
 
-- Custom workflows don't support project directories (<https://github.com/fastly/compute-actions/issues/49>)
+- Custom workflows don't support project directories
+  (<https://github.com/fastly/compute-actions/issues/49>)
+
+- I get a mysterious "provided viceroy_version() is not a valid semver" error
+  on CI (<https://github.com/fastly/compute-actions/issues/50>).

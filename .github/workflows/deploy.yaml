@@ -16,7 +16,8 @@ jobs:
           targets: wasm32-wasi # WebAssembly target
 
     - name: Deploy examples/hello-fastly
-      uses: fastly/compute-actions@v6
+      # https://github.com/fastly/compute-actions/issues/50
+      uses: fastly/compute-actions@c31e44b2a680e0d61640971d0962cca4bcad3484
       with:
         project_directory: examples/hello-fastly
       env:
